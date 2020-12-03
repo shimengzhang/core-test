@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.0/axios.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div id="div1"></div>
+  <script>
+    const div1 = document.getElementById('div1')
+    const url = '//dev.autohome.com.cn:3000/api/list'
+    
+    fetch(url, {
+      credentials: 'include',
+    }).then((res=>res.json()))
+    .then(data=>{
+      div1.innerHTML = JSON.stringify(data)
+    })
+
+    // axios.get(url)
+    //   .then((data)=>{
+    //     div1.innerHTML = JSON.stringify(data.data)
+    //   })
+  </script>
+  
+</body>
+</html>
